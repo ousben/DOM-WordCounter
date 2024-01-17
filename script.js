@@ -53,9 +53,7 @@ textArea.addEventListener("input", function() {
   let counter = 0;
   let splitedWords = textArea.value.split(" ");
   let array = splitedWords.map(item => {
-    if(item != "") {
-      return item.toLowerCase();
-    }
+    return item.toLowerCase()
   })
   let toDelete = [];
   for(let i = 0; i < array.length; i++) {
@@ -73,15 +71,28 @@ textArea.addEventListener("input", function() {
 
 //details characters display
 textArea.addEventListener("input", function() {
-
+  let counter = textArea.value.length;
+  characters.textContent = counter;
 });
 
 //details sentences display
 textArea.addEventListener("input", function() {
-
+  let counter = 0;
+  let splitedSentence = textArea.value.split(".");
+  for(let i = 0; i < splitedSentence.length; i++) {
+    if(splitedSentence[i] != "") {
+      counter++
+    }
+  }
+  sentences.textContent = counter;
 });
 
 //details longuest sentence display
 textArea.addEventListener("input", function() {
+  let
+});
 
+//details shortest sentence display
+textArea.addEventListener("input", function() {
+  
 });

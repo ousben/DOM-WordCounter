@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@50..200,200..900&display=swap');
 
-* {
-  border: 1px solid red;
-}
-
 body {
   height: 100vh;
   margin: 0;
@@ -50,11 +46,13 @@ body {
 .div3 {
   grid-area: 1 / 7 / 5 / 9;
   border: 5px solid #ffffff;
+  padding: 5px;
 }
   
 .div4 {
   grid-area: 5 / 7 / 9 / 9;
   border: 5px solid #ffffff;
+  padding: 5px;
 }
   
 textarea {
@@ -76,7 +74,13 @@ textarea::placeholder {
   font-size: 1.5rem;
 }
 
+ul {
+  padding: 0;
+}
+
 ul > li {
+  display: flex;
+  justify-content: space-between;
   list-style: none;
   font-weight: 700;
 }

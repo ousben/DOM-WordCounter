@@ -20,5 +20,14 @@ const averageWordLength = document.getElementById("average-word-length");
 const densityList = document.getElementById("density-list");
 
 textArea.addEventListener("input", function() {
-  console.log(textArea.value);
+  let counter = textArea.value.length;
+  resultCharacters.textContent = counter;
+
+  let splitedWordsCounter = 0;
+  let splitedWords = textArea.value.split(" ");
+  for(let i = 0; i < splitedWords.length; i++) {
+    splitedWordsCounter++
+  }
+  resultWords.textContent = splitedWordsCounter;
+  console.log(splitedWords);
 })

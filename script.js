@@ -19,6 +19,8 @@ const averageWordLength = document.getElementById("average-word-length");
 //fourth div
 const densityList = document.getElementById("density-list");
 
+
+//title div display
 textArea.addEventListener("input", function() {
   let counter = textArea.value.length;
   resultCharacters.textContent = counter;
@@ -26,8 +28,60 @@ textArea.addEventListener("input", function() {
   let splitedWordsCounter = 0;
   let splitedWords = textArea.value.split(" ");
   for(let i = 0; i < splitedWords.length; i++) {
-    splitedWordsCounter++
+    if(splitedWords[i] != "") {
+      splitedWordsCounter++;
+    }
   }
   resultWords.textContent = splitedWordsCounter;
-  console.log(splitedWords);
-})
+});
+
+
+//details words display
+textArea.addEventListener("input", function() {
+  let splitedWordsCounter = 0;
+  let splitedWords = textArea.value.split(" ");
+  for(let i = 0; i < splitedWords.length; i++) {
+    if(splitedWords[i] != "") {
+      splitedWordsCounter++;
+    }
+  }
+  words.textContent = splitedWordsCounter;
+});
+
+//details unique words display
+textArea.addEventListener("input", function() {
+  let counter = 0;
+  let splitedWords = textArea.value.split(" ");
+  let array = splitedWords.map(item => {
+    if(item != "") {
+      return item.toLowerCase();
+    }
+  })
+  let toDelete = [];
+  for(let i = 0; i < array.length; i++) {
+    for(let j = i + 1; j < array.length; j++) {
+      if(array[i] === array[j]) {
+        toDelete.push(j);
+      }
+    }
+  }
+  for(let i = 0; i < toDelete.length; i++) {
+    array.splice(toDelete[i] - i, 1);
+  }
+  uniqueWords.textContent = array.length;
+});
+
+//details characters display
+textArea.addEventListener("input", function() {
+
+});
+
+//details sentences display
+textArea.addEventListener("input", function() {
+
+});
+
+//details longuest sentence display
+textArea.addEventListener("input", function() {
+
+});

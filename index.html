@@ -8,25 +8,29 @@
 </head>
 <body>
   <div class="main-container">
-    <div class="div1 common-div" id="result">0 words and 0 characters</div>
-    <div class="div2 common-div" id="text-area"><textarea placeholder="the text here"></textarea></div>
+    <div class="div1 common-div" id="result">
+      <h2><span>0</span> words and <span>0</span> characters</h2>
+    </div>
+    <div class="div2 common-div" id="text-area">
+      <textarea placeholder="the text here"></textarea>
+    </div>
     <div class="div3 common-div" id="details">
-      <h2>Details</h2>
+      <h2 id="details-list">Details</h2>
       <ul>
-        <li>Words : <span></span></li>
-        <li>Unique Words : <span></span></li>
-        <li>Characters : <span></span></li>
-        <li>Sentences : <span></span></li>
-        <li>Longuest Sentence : <span></span></li>
-        <li>Shortest Sentence : <span></span></li>
-        <li>Average Sentence (words) : <span></span></li>
-        <li>Average Sentence (chars): <span></span></li>
-        <li>Average Word Length: <span></span></li>
+        <li>Words : <span id="words">0</span></li>
+        <li>Unique Words : <span id="unique-words">0</span></li>
+        <li>Characters : <span id="characters">0</span></li>
+        <li>Sentences : <span id="sentences">0</span></li>
+        <li>Longuest Sentence : <span id="longuest-sentence">0</span></li>
+        <li>Shortest Sentence : <span id="shortest-sentence">0</span></li>
+        <li>Average Sentence (words) : <span id="average-sentence-words">0</span></li>
+        <li>Average Sentence (chars): <span id="average-sentence-chars">0</span></li>
+        <li>Average Word Length: <span id="average-word-length">0</span></li>
       </ul>
     </div>
     <div class="div4 common-div" id="keyword">
       <h2>Keyword Density</h2>
-      <ul></ul>
+      <ul id="density-list"></ul>
     </div>
   </div>
   <script src="script.js"></script>

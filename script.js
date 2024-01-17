@@ -89,10 +89,16 @@ textArea.addEventListener("input", function() {
 
 //details longuest sentence display
 textArea.addEventListener("input", function() {
-  let
+  let counter = 0;
+  let splitedSentence = textArea.value.split(".");
+
+  for(let i = 0; i < splitedSentence.length; i++) {
+    let splitedWords = splitedSentence[i].split(" ");
+  }
+  longuestSentence.textContent = counter;
 });
 
 //details shortest sentence display
 textArea.addEventListener("input", function() {
-  
+
 });

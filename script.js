@@ -89,13 +89,23 @@ textArea.addEventListener("input", function() {
 
 //details longuest sentence display
 textArea.addEventListener("input", function() {
-  let counter = 0;
+  let mainCounter = 0;
   let splitedSentence = textArea.value.split(".");
-
-  for(let i = 0; i < splitedSentence.length; i++) {
-    let splitedWords = splitedSentence[i].split(" ");
+  let splitedWords = splitedSentence.map(item => {
+    return item.split(" ");
+  })
+  for(let i = 0; i < splitedWords.length; i++) {
+    let innerCounter = 0;
+    for(let j = 0; j < splitedWords[i].length; j++) {
+      if(splitedWords[i][j] != "") {
+        innerCounter++;
+      }
+    }
+    if(innerCounter > mainCounter) {
+      mainCounter = innerCounter;
+    }
   }
-  longuestSentence.textContent = counter;
+  longuestSentence.textContent = mainCounter;
 });
 
 //details shortest sentence display

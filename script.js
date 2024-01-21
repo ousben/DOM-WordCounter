@@ -110,19 +110,22 @@ textArea.addEventListener("input", function() {
 
 //details shortest sentence display
 textArea.addEventListener("input", function() {
-  let mainCounter = 1;
+  let mainCounter = 0;
   let splitedSentence = textArea.value.split(".");
-  let splitedWords = splitedSentence.map(item => {
+  let splitWords = splitedSentence.map(item => {
     return item.split(" ");
   })
-  for(let i = 0; i < splitedWords.length; i++) {
+  for(let i = 0; i < splitWords.length; i++) {
     let innerCounter = 0;
-    for(let j = 0; j < splitedWords[i].length; j++) {
-      if(splitedWords[i][j] != "") {
+    for(let j = 0; j < splitWords[i].length; j++) {
+      if(splitWords[i][j] != "") {
         innerCounter++;
       }
     }
     if(innerCounter < mainCounter) {
+      mainCounter = innerCounter;
+    }
+    if(i === 0) {
       mainCounter = innerCounter;
     }
   }

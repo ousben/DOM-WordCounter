@@ -35,7 +35,6 @@ textArea.addEventListener("input", function() {
   resultWords.textContent = splitedWordsCounter;
 });
 
-
 //details words display
 textArea.addEventListener("input", function() {
   let splitedWordsCounter = 0;
@@ -111,8 +110,8 @@ textArea.addEventListener("input", function() {
 //details shortest sentence display
 textArea.addEventListener("input", function() {
   let mainCounter = 0;
-  let splitedSentence = textArea.value.split(".");
-  let splitWords = splitedSentence.map(item => {
+  let splitSentence = textArea.value.split(".");
+  let splitWords = splitSentence.map(item => {
     return item.split(" ");
   })
   for(let i = 0; i < splitWords.length; i++) {
@@ -131,3 +130,24 @@ textArea.addEventListener("input", function() {
   }
   shortestSentence.textContent = mainCounter;
 });
+
+//details average sentence by words display
+textArea.addEventListener("input", function() {
+  let mainCounter = 0;
+  let splitedSentence = textArea.value.split(".");
+  let splitedWords = splitedSentence.map(item => {
+    return item.split(" ");
+  })
+  for(let i = 0; i < splitedWords.length; i++) {
+    let innerCounter = 0;
+    for(let j = 0; j < splitedWords[i].length; i++) {
+      if(splitedWords[i][j] != "") {
+        innerCounter++;
+      }
+    }
+    if(innerCounter > mainCounter) {
+      mainCounter = innerCounter;
+    }
+  }
+  averageSentenceWords.textContent = mainCounter;
+})

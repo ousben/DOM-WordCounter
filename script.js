@@ -154,3 +154,14 @@ textArea.addEventListener("input", function() {
   let result = sum / mainCounter.length;
   averageSentenceWords.textContent = result.toFixed(2);
 })
+
+//details average sentence by characters display
+textArea.addEventListener("input", function() {
+  let mainCounter = 0;
+  let splitedSentence = textArea.value.split(".");
+  for(let i = 0; i < splitedSentence.length; i++) {
+    mainCounter += splitedSentence[i].length;
+  }
+  let result = mainCounter / splitedSentence.length;
+  averageSentenceChars.textContent = result.toFixed(2);
+})

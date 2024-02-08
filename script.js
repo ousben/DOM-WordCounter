@@ -133,21 +133,24 @@ textArea.addEventListener("input", function() {
 
 //details average sentence by words display
 textArea.addEventListener("input", function() {
-  let mainCounter = 0;
+  let mainCounter = [];
+  let sum = 0;
   let splitedSentence = textArea.value.split(".");
   let splitedWords = splitedSentence.map(item => {
     return item.split(" ");
   })
   for(let i = 0; i < splitedWords.length; i++) {
     let innerCounter = 0;
-    for(let j = 0; j < splitedWords[i].length; i++) {
+    for(let j = 0; j < splitedWords[i].length; j++) {
       if(splitedWords[i][j] != "") {
         innerCounter++;
       }
     }
-    if(innerCounter > mainCounter) {
-      mainCounter = innerCounter;
-    }
+    mainCounter.push(innerCounter);
   }
-  averageSentenceWords.textContent = mainCounter;
+  mainCounter.forEach(num => {
+    sum += num;
+  })
+  let result = sum / mainCounter.length;
+  averageSentenceWords.textContent = result.toFixed(2);
 })

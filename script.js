@@ -168,5 +168,26 @@ textArea.addEventListener("input", function() {
 
 //average word length display
 textArea.addEventListener("input", function() {
-  
+  let result = [];
+  let sum = 0;
+  let splitedSentence = textArea.value.split(" ");
+  for(let i = 0; i < splitedSentence.length; i++) {
+    if(splitedSentence[i].includes(".")) {
+      let splitedWords = splitedSentence[i].split(".");
+      for(let j = 0; j < splitedWords.length; j++) {
+        if(splitedWords[j] != "") {
+          result.push(splitedWords[j]);
+        }
+      }
+    } else {
+      if(splitedSentence[i] != "") {
+        result.push(splitedSentence[i]);
+      }
+    }
+  }
+  result.forEach(item => {
+    sum += item.length;
+  })
+  let finalResult = sum / result.length;
+  averageWordLength.textContent = finalResult.toFixed(2);
 })

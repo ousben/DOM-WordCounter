@@ -163,5 +163,10 @@ textArea.addEventListener("input", function() {
     mainCounter += splitedSentence[i].length;
   }
   let result = mainCounter / splitedSentence.length;
-  averageSentenceChars.textContent = result.toFixed(2);
+  averageSentenceChars.textContent = result.toFixed(1);
+})
+
+//average word length display
+textArea.addEventListener("input", function() {
+  
 })

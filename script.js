@@ -189,5 +189,10 @@ textArea.addEventListener("input", function() {
     sum += item.length;
   })
   let finalResult = sum / result.length;
-  averageWordLength.textContent = finalResult.toFixed(2);
+  if(result.length === 0) {
+    averageWordLength.textContent = 0.00;
+  } else {
+    averageWordLength.textContent = finalResult.toFixed(2);
+  }
 })
+

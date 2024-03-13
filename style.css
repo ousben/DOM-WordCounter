@@ -15,18 +15,10 @@ body {
   gap: 15px;
   height: 100%;
   width: 100%;
-  background: linear-gradient(to right, #16222a, #3a6073);
+  background-color: #000000;
   font-family: Inconsolata;
   font-size: 20px;
   color: #ffffff;
-}
-
-.common-div {
-  transition: 0.2s ease-in;
-}
-
-.common-div:hover {
-  border: 5px solid orange;
 }
   
 .div1 {

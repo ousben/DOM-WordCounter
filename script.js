@@ -196,3 +196,8 @@ textArea.addEventListener("input", function() {
   }
 })
 
+//Keyword Density display
+textArea.addEventListener("input", function() {
+  let splitedSentence = textArea.value.split(" ");
+  console.log(splitedSentence);
+})
